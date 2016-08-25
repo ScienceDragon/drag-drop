@@ -1,0 +1,95 @@
+@charset "UTF-8";
+/* CSS Document */
+
+div#content {
+	height: 400px;
+	border: 1px solid #000;
+}
+
+div#makeMeDraggableM {
+	width: 100px;
+	height: 100px;
+	background: Gray;
+	margin: 10px;
+}
+
+div#makeMeDraggableS.ui-state-highlight {
+	background: Green;
+}
+
+div#makeMeDraggableS {
+	width: 75px;
+	height: 75px;
+	background: Gray;
+	margin: 10px;
+}
+
+div#makeMeDraggableL {
+	width: 125px;
+	height: 125px;
+	background: Gray;
+	margin: 10px;
+}
+
+.ui-draggable-accepted {
+	background: Green;
+}
+
+.ui-draggable-dragging {
+	background: Gray;
+	opacity: 50%;
+	box-shadow: #999 10px 10px 10px;
+}
+
+div#draggableHelper {
+	width: 100px;
+	height: 100px;
+	background: yellow;
+}
+
+#leftCol {
+	float: left;
+	display: inline-block;
+	height: 400px;
+}
+
+#rightCol {
+	float: right;	
+}
+
+#makeMeDroppableM {
+	margin: 10px;
+	width: 100px;
+	height: 100px;
+	box-sizing: border-box;
+	border: 5px dashed #999;
+}
+
+#makeMeDroppableL {
+	margin: 10px;
+	width: 125px;
+	height: 125px;
+	box-sizing: border-box;
+	border: 5px dashed #999;
+}
+
+#makeMeDroppableS {
+	margin: 10px;
+	width: 75px;
+	height: 75px;
+	box-sizing: border-box;
+	border: 5px dashed #999;
+}
+
+#restart {
+	float: right;
+}
+
+#restart .button {
+    background: #E3E3E3;
+    cursor:pointer;
+    width: 135px;
+    height: 40px;
+	text-align: center;
+    border: 1px solid #000;
+}

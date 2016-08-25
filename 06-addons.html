@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+    <title>jQueryUI draggable</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+    <!--Style placed here for the example, will not effect other html files linked to styles.css-->
+	<style>
+		div#makeMeDraggable {
+			float: left;
+		}
+	</style>	
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+    
+    <script type="text/javascript">
+	
+		$( init );
+		//Same thing as:
+		//window.addEventListener('DOMContentLoaded', init); // in Javascript
+		//$(window).ready(init); // in jQuery
+		
+		function init() {
+			
+				$('#makeMeDraggableS').draggable( {
+					containment: '#content',
+					snap: '#makeMeDroppableM, #makeMeDroppableS, #makeMeDroppableL',
+				});
+				
+				$('#makeMeDraggableM,').draggable( {
+					containment: '#content',
+					snap: '#makeMeDroppableM, #makeMeDroppableS, #makeMeDroppableL',
+				});
+				
+				$('#makeMeDraggableL,').draggable( {
+					containment: '#content',
+					snap: '#makeMeDroppableM, #makeMeDroppableS, #makeMeDroppableL',
+				});
+				
+				$('#makeMeDroppableS').droppable( {
+					accept: '#makeMeDraggableS',
+					drop: handleDropEvent,
+				});
+				
+				$('#makeMeDroppableM').droppable( {
+					accept: '#makeMeDraggableM',
+					drop: handleDropEvent,
+				});
+				
+				$('#makeMeDroppableL').droppable( {
+					accept: '#makeMeDraggableL',
+					drop: handleDropEvent,
+				});
+		}			
+		
+		function handleDropEvent( event, ui) {
+			var droppable = ui.draggable-accepted;
+			
+				$(this)
+					.addClass("ui-state-highlight");
+		}
+		
+		
+					<!--function handleDropEvent( event, ui ) {
+					<!--	var draggable = ui.draggable;
+						<!--// alert( 'The square with ID"' + draggable.attr('id') + '"was dropped onto me!' ); //-->
+					<!--	}
+		
+	</script>
+    
+</head>
+<body>
+
+    <div id="content">
+    
+    	<div id="leftCol">
+
+            <div id="makeMeDraggableS">
+            </div><!--closes div id makeMeDraggable--> 
+            
+            <div id="makeMeDraggableM">
+            </div><!--closes div id makeMeDraggable2-->
+            
+            <div id="makeMeDraggableL">
+            </div><!--closes div id makeMeDraggable3-->
+            
+        </div><!--closes div leftCol-->
+
+		<div id="rightCol">
+        
+        	<div id="makeMeDroppableL">
+            </div><!--closes div makeMeDroppable3-->
+            
+            <div id="makeMeDroppableS">
+            </div><!--closes div id makeMeDroppable2-->
+            
+            <div id="makeMeDroppableM">
+            </div><!--closes div id makeMeDroppable-->
+        </div><!--closes div rightCol-->
+                
+    </div><!--closes div id content-->
+    <br/>
+    
+    <div id="restart">
+    	<form><input type="button" class="button" value="Reset Blocks" onClick="history.go()"></form>
+	</div><!--closes div restart-->
+</body>
+</html>
